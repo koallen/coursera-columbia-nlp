@@ -21,6 +21,7 @@ def convert(filename):
 def get_all_words_tags(filename):
     all_words = []
     all_tags = []
+    rares = ["_RARE_", "_CAPITAL_", "_LAST_", "_DIGIT_"]
 
     with open(filename, "r") as train:
             lines = [x.rstrip("\n").split() for x in train.readlines()]
@@ -30,7 +31,7 @@ def get_all_words_tags(filename):
                 else:
                     word = line[0]
                     tag = line[1]
-                    if word not in all_words and word != "_RARE_":
+                    if word not in all_words and word not in rares:
                         all_words.append(word)
                     if tag not in all_tags:
                         all_tags.append(tag)

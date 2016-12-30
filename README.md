@@ -4,7 +4,7 @@ Programming assignments for NLP course on Coursera by Michael Collins.
 
 ## Progress
 
-- [ ] Programming assignment 1
+- [x] Programming assignment 1
 - [ ] Programming assignment 2
 - [ ] Programming assignment 3
 - [ ] Programming assignment 4
