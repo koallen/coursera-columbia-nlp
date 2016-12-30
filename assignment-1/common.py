@@ -17,3 +17,22 @@ def convert(filename):
                 count_dict[(count[2], count[3], count[4])] = count[0]
 
     return count_dict
+
+def get_all_words_tags(filename):
+    all_words = []
+    all_tags = []
+
+    with open(filename, "r") as train:
+            lines = [x.rstrip("\n").split() for x in train.readlines()]
+            for line in lines:
+                if len(line) == 0:
+                    pass
+                else:
+                    word = line[0]
+                    tag = line[1]
+                    if word not in all_words and word != "_RARE_":
+                        all_words.append(word)
+                    if tag not in all_tags:
+                        all_tags.append(tag)
+
+    return all_words, all_tags
